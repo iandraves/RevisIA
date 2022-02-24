@@ -1,2 +1,3 @@
 # RevisIA
-Modification of Harvard's IATs to revise your implicit associations.
+
+Deliberate reassociation engine based on Harvard's "Weapons IAT".
