@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" class="uk-width-1-1 uk-height-1-1">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RevisIA</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit-icons.min.js"></script>
+
+</head>
+
+<body class="uk-width-1-1 uk-height-1-1">
+    <div class="uk-width-1-1 uk-height-1-1 uk-flex uk-flex-center uk-flex-middle">
+        <!-- First question -->
+        <div id="q1">
+            <p>Have you taken the "Weapons IAT"?</p>
+            <div class="uk-width-1-1 uk-flex-inline uk-flex-center uk-flex-middle">
+                <button class="uk-button uk-button-primary uk-margin-right" onclick="nextSection()">Yes</button>
+                <a class="uk-button uk-button-danger" href="https://implicit.harvard.edu/implicit/selectatest.html"
+                    target="_blank">No</a>
+            </div>
+        </div>
+
+        <!-- Second question -->
+        <div class="uk-hidden" id="q2">
+            <p>According to the IAT, which do you associate weapons with?</p>
+            <div class="uk-width-1-1 uk-flex-inline uk-flex-center uk-flex-middle">
+                <button class="uk-button uk-button-default uk-margin-right" onclick="setWhite()">White
+                    Americans</button>
+                <button class="uk-button uk-button-secondary" onclick="setBlack()">Black Americans</button>
+            </div>
+        </div>
+
+        <!-- Main section -->
+        <div class="uk-hidden uk-width-1-2" id="main">
+            <div class="uk-child-width-1-3@s" uk-grid>
+                <div id="category1"></div>
+                <div>
+                    <div id="images" uk-sortable="group: sortable-group"></div>
+                </div>
+                <div id="category2"></div>
+            </div>
+        </div>
+
+        <!-- Info modal -->
+        <div id="info" class="uk-modal-full" uk-modal>
+            <div class="uk-modal-dialog">
+                <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+                    <table class="uk-table">
+                        <thead>
+                            <tr>
+                                <th class="uk-text-center">Harmless Objects</th>
+                                <th class="uk-text-center">Weapons</th>
+                                <th class="uk-text-center">Black Americans</th>
+                                <th class="uk-text-center">White Americans</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="uk-table-shrink uk-child-width-1-2@s">
+                                    <img class="uk-align-center" src="./img/harmless/backpack.png">
+                                    <img class="uk-align-center" src="./img/harmless/keychain.png">
+                                    <img class="uk-align-center" src="./img/harmless/notebook.png">
+                                    <img class="uk-align-center" src="./img/harmless/toothbrush.png">
+                                    <img class="uk-align-center" src="./img/harmless/umbrella.png">
+                                    <img class="uk-align-center" src="./img/harmless/wallet.png">
+                                </td>
+                                <td class="uk-table-shrink uk-child-width-1-2@s">
+                                    <img class="uk-align-center" src="./img/weapons/automaticrifle.png">
+                                    <img class="uk-align-center" src="./img/weapons/brassknuckles.png">
+                                    <img class="uk-align-center" src="./img/weapons/dynamite.png">
+                                    <img class="uk-align-center" src="./img/weapons/handgun.png">
+                                    <img class="uk-align-center" src="./img/weapons/knife.png">
+                                    <img class="uk-align-center" src="./img/weapons/shotgun.png">
+                                </td>
+                                <td class="uk-table-shrink uk-child-width-1-2@s">
+                                    <img class="uk-margin uk-align-center" src="./img/black/f14.jpg">
+                                    <img class="uk-margin uk-align-center" src="./img/black/f23.jpg">
+                                    <img class="uk-margin uk-align-center" src="./img/black/f56.jpg">
+                                    <img class="uk-margin uk-align-center" src="./img/black/m14.jpg">
+                                    <img class="uk-margin uk-align-center" src="./img/black/m23.jpg">
+                                    <img class="uk-margin uk-align-center" src="./img/black/m56.jpg">
+                                </td>
+                                <td class="uk-table-shrink uk-child-width-1-2@s">
+                                    <img class="uk-margin uk-align-center" src="./img/white/f2.jpg" height="5">
+                                    <img class="uk-margin uk-align-center" src="./img/white/f3.jpg" height="5">
+                                    <img class="uk-margin uk-align-center" src="./img/white/f6.jpg" height="5">
+                                    <img class="uk-margin uk-align-center" src="./img/white/m1.jpg" height="5">
+                                    <img class="uk-margin uk-align-center" src="./img/white/m4.jpg" height="5">
+                                    <img class="uk-margin uk-align-center" src="./img/white/m6.jpg" height="5">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="uk-padding-large">
+                        <h1>Revise your Implicit Associations</h1>
+                        <p>RevisIA helps you change your implicit associations with weapons and race.
+                            The following activity is a modified version of the
+                            "Weapons IAT", requiring you to deliberately associate harmless objects with the race you
+                            currently associate with weapons and weapons with the race you currently associate with
+                            harmless
+                            objects. Deliberate reassociation is proven to change implicit attitudes.</p>
+                        <p>Specifically, once you click begin, you will categorize the images seen on the left
+                            reassociatively. For
+                            example, if your
+                            IAT results indicate that you implicitly associate weapons with black Americans, then
+                            you will be asked to categorize harmless objects with black Americans and weapons with white
+                            Americans. Unlike the
+                            "Weapons
+                            IAT", you will not be
+                            attempting to sort these images as quickly as possible. Instead, it is important that you
+                            take your time to sort images accurately.</p>
+                        <p>Once you complete a level, another level will load automatically. There are an infinite
+                            number of levels (they are procedurally generated), so you can
+                            complete as
+                            many levels as you would like. However, for true reassocation to happen, it is reccomended
+                            that this be a frequent practice until your results on the "Weapons IAT" consistently show a
+                            difference.</p>
+                        <p>Click begin whenever you are ready.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-position-bottom">
+                <button class="uk-button uk-button-primary uk-modal-close uk-width-1-1" type="button"
+                    onclick="begin()">Begin</button>
+            </div>
+        </div>
+</body>
+
+<script src="index.js"></script>
+
+</html>
