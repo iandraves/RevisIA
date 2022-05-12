@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://iandraves.github.io/RevisIA/">
     <img src="img/favicon.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -23,7 +23,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://iandraves.github.io/RevisIA/)
 
 RevisIA helps you change your implicit associations with weapons and race. The following activity is a modified version of the "Weapons IAT", requiring you to deliberately associate harmless objects with the race you currently associate with weapons and weapons with the race you currently associate with harmless objects. Deliberate reassociation is proven to change implicit attitudes.
 
